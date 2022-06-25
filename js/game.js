@@ -64,13 +64,19 @@ const revealCard = ({ target }) => {
   if (firstCard === "") {
     target.parentNode.classList.add("reveal-card");
     firstCard = target.parentNode;
-  } else if (secondCard === "") {
+  } else if (secondCard === "" && target.parentNode.classList[0] !== 'grid') {
     target.parentNode.classList.add("reveal-card");
     secondCard = target.parentNode;
 
     checkCards();
   }
 };
+
+const headBar = () => {
+  const jogador = localStorage.getItem('player');
+  console.log(jogador)
+  document.getElementById('nick').innerHTML = jogador
+}
 
 const createCard = (character) => {
   const card = createElement("div", "card");
@@ -90,6 +96,8 @@ const createCard = (character) => {
 
 const loadGame = () => {
   const duplicateCharacters = [...characters, ...characters];
+
+  headBar()
 
   const shuffledArray = duplicateCharacters.sort(() => Math.random() - 0.5);
 

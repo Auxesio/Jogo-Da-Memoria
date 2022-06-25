@@ -1,3 +1,16 @@
+body {
+    background-image: url(../images/bg.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+}
+
+#nick {
+    margin-top: 15px;
+}
+
 .grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -43,4 +56,12 @@
 .disabled-card {
     filter: saturate(0);
     opacity: 0.5;
+}
+
+.headbar {
+    border: 1px solid rgba(255, 0, 0, 0);
+    background-color: white;
+    margin: 0 auto;
+    width: 50vw;
+    height: 60px;
 }
