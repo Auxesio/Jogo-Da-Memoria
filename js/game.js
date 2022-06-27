@@ -63,7 +63,7 @@ const revealCard = ({ target }) => {
   if (firstCard === "") {
     target.parentNode.classList.add("reveal-card");
     firstCard = target.parentNode;
-  } else if (secondCard === "" && target.parentNode.classList[0] !== "grid") {
+  } else if (secondCard === "" && target.parentNode.classList[0] !== ".grid") {
     target.parentNode.classList.add("reveal-card");
     secondCard = target.parentNode;
 

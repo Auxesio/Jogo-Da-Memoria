@@ -7,10 +7,6 @@ body {
   height: 100%;
 }
 
-#nick {
-  margin: 15px 0;
-}
-
 .grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -71,8 +67,18 @@ body {
   width: 50vw;
   height: 80px;
   text-align: center;
+  transition: 1s;
+}
+
+.headbar:hover {
+  width: 51vw;
+  height: 85px;
 }
 
 #miss {
   color: #333;
+}
+
+#nick {
+  margin: 15px 0;
 }
