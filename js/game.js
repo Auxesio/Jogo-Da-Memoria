@@ -11,6 +11,7 @@ const characters = [
   "summer",
   "meeseeks",
   "scroopy",
+  "careca",
 ];
 
 const createElement = (tag, className) => {
