@@ -1,67 +1,78 @@
 body {
-    background-image: url(../images/bg.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 100%;
+  background-image: url(../images/bg.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
 }
 
 #nick {
-    margin-top: 15px;
+  margin: 15px 0;
 }
 
 .grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 15px;
-    width: 100%;
-    max-width: 800px;
-    margin: 100px auto;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+  width: 100%;
+  max-width: 800px;
+  margin: 15px auto;
 }
 
 .card {
-    aspect-ratio: 3/4;
-    width: 100%;
-    border-radius: 5px;
-    position: relative;
-    transition: all 400ms ease;
-    transform-style: preserve-3d;
+  aspect-ratio: 3/4;
+  width: 100%;
+  border-radius: 5px;
+  position: relative;
+  transition: all 400ms ease;
+  transform-style: preserve-3d;
 }
 
 .face {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background-size: cover;
-    background-position: center;
-    border: 2px solid #39813a;
-    border-radius: 5px;
-    transition: all 400ms ease;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-size: cover;
+  background-position: center;
+  border: 2px solid #39813a;
+  border-radius: 5px;
+  transition: all 400ms ease;
 }
 
 .front {
-    transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
 
 .reveal-card {
-    transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
 
 .back {
-    background-image: url(../images/back.png);
-    backface-visibility: hidden;
+  background-image: url(../images/back.png);
+  backface-visibility: hidden;
 }
 
 .disabled-card {
-    filter: saturate(0);
-    opacity: 0.5;
+  filter: saturate(0);
+  opacity: 0.5;
 }
 
 .headbar {
-    border: 1px solid rgba(255, 0, 0, 0);
-    background-color: white;
-    margin: 0 auto;
-    width: 50vw;
-    height: 60px;
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(13.5px);
+  -webkit-backdrop-filter: blur(13.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  margin: 20px auto;
+  letter-spacing: 1.3px;
+  font-weight: bold;
+  width: 50vw;
+  height: 80px;
+  text-align: center;
+}
+
+#miss {
+  color: #333;
 }

@@ -23,12 +23,12 @@ let firstCard = "";
 let secondCard = "";
 
 const checkEndGame = () => {
-    const disabledCards = document.querySelectorAll('.disabled-card');
-  
-    if (disabledCards.length === 20) {
-      alert('Parabéns, você conseguiu!');
-    }
+  const disabledCards = document.querySelectorAll(".disabled-card");
+
+  if (disabledCards.length === 20) {
+    alert("Parabéns, você conseguiu!");
   }
+};
 
 const checkCards = () => {
   const firstCharacter = firstCard.getAttribute("data-character");
@@ -49,12 +49,11 @@ const checkCards = () => {
 
       firstCard = "";
       secondCard = "";
-
-      
-
     }, 500);
   }
 };
+
+let tries = 0;
 
 const revealCard = ({ target }) => {
   if (target.parentNode.className.includes("reveal-card")) {
@@ -64,19 +63,20 @@ const revealCard = ({ target }) => {
   if (firstCard === "") {
     target.parentNode.classList.add("reveal-card");
     firstCard = target.parentNode;
-  } else if (secondCard === "" && target.parentNode.classList[0] !== 'grid') {
+  } else if (secondCard === "" && target.parentNode.classList[0] !== "grid") {
     target.parentNode.classList.add("reveal-card");
     secondCard = target.parentNode;
 
     checkCards();
+    countMiss();
   }
 };
 
 const headBar = () => {
-  const jogador = localStorage.getItem('player');
-  console.log(jogador)
-  document.getElementById('nick').innerHTML = jogador
-}
+  const jogador = localStorage.getItem("player");
+  console.log(jogador);
+  document.getElementById("nick").innerHTML = jogador;
+};
 
 const createCard = (character) => {
   const card = createElement("div", "card");
@@ -97,7 +97,7 @@ const createCard = (character) => {
 const loadGame = () => {
   const duplicateCharacters = [...characters, ...characters];
 
-  headBar()
+  headBar();
 
   const shuffledArray = duplicateCharacters.sort(() => Math.random() - 0.5);
 
@@ -105,6 +105,15 @@ const loadGame = () => {
     const card = createCard(character);
     grid.appendChild(card);
   });
+};
+
+const countMiss = () => {
+  tries++;
+  console.log(tries);
+  localStorage.setItem("erros", tries);
+
+  const tentativas = tries;
+  document.getElementById("miss").innerHTML = `Tentativas: ${tentativas}`;
 };
 
 loadGame();
